@@ -5,7 +5,9 @@
       <div 
       v-for="(product, index) in this.products"
       :key="index"
-      class="product">
+      class="product"
+      :class="{ inBag : isInBag(product)}"
+      >
         <div class="product-image" :style="{backgroundImage: 'url(' + product.image +')'}"></div>
         <h4>{{product.title}}</h4>
         <p class="price">R$ {{product.price.toFixed(2)}}</p>
